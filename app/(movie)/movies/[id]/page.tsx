@@ -1,17 +1,19 @@
-// export const metadata = {
-//     title: {movie.title}
-// }
-
-import MovieInfos from "../../../../components/movie-info";
+import MovieInfos, {getMovie} from "../../../../components/movie-info";
 import MovieVideos from "../../../../components/movie-videos";
 import {Suspense} from "react";
 
-export default async function MovieDetail(
-    {
-        params: {id}
-    }: {
-        params: { id: string }
-    }) {
+interface IParams {
+    params: {id: string};
+}
+
+export async function generateMetadata({params: {id}}: IParams) {
+    const info = await getMovie(id);
+    return {
+        title: info.title,
+    }
+}
+
+export default async function MovieDetail({params: {id}}: IParams) {
     // const movie = await getMovie(id);
     // const videos = await getVideo(id);
 

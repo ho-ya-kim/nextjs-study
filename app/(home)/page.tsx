@@ -18,11 +18,10 @@ export default async function HomePage() {
     const movies = await getMovies();
     return (
         <h1>{movies.map(movie =>
-            <li key={movie.id}>
-                <Link href={`/movies/${movie.id}`}>
-                    {movie.title}
-                </Link>
-            </li>
+            <div key={movie.id}>
+                <img src={movie.poster_path} alt={movie.title}/>
+                <Link href={`/movies/${movie.id}`}>{movie.title}</Link>
+            </div>
         )}</h1>
     )
 }
