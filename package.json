@@ -1,7 +1,7 @@
 {
   "name": "nextjs-study",
   "version": "1.0.0",
-  "description": "",
+  "description": "---\r ## SSR vs CSR\r There are two type of rendering in NextJS, call **SSR (Server Side Rendering)** and **CSR (Client Side Rendering)**.",
   "main": "index.js",
   "scripts": {
     "dev": "next dev"
